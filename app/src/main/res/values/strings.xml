@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BEINIT</string>
+    <string name="title_activity_dashboard">BashboardActivity</string>
+    <string name="leak_canary_display_activity_label">@string/app_name</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="title_activity_login">LOG IN</string>
+    <string name="login_with_wechat">Log in with WeChat</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">LOG IN</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="or_sign_up">---or sign up---</string>
+
+    <string name="email">Email</string>
+    <string name="choose_user_name">Choose username</string>
+    <string name="choose_password">Choose password</string>
+    <string name="title_activity_sing_up">SIGN UP</string>
+    <string name="terms_and_condition">By signing up, you agree to Be in it\nTerms and conditions of use and Privacy Policy</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

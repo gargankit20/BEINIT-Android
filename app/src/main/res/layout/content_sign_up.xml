@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.login.LoginActivity"
+    tools:showIn="@layout/activity_login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:drawableLeft="@mipmap/ic_mail"
+            android:drawablePadding="@dimen/spacing_small"
+            android:drawableTint="@color/gray_dark"
+            android:hint="@string/email"
+            android:padding="@dimen/spacing_small"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/gray_dark" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:drawableLeft="@mipmap/ic_lock_24dp"
+            android:drawablePadding="@dimen/spacing_small"
+            android:hint="@string/choose_password"
+            android:inputType="textPassword"
+            android:padding="@dimen/spacing_small"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/gray_dark" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:drawableLeft="@mipmap/ic_user_name"
+            android:drawablePadding="@dimen/spacing_small"
+            android:drawableTint="@color/gray_dark"
+            android:hint="@string/choose_user_name"
+            android:padding="@dimen/spacing_small"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/gray_dark" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/login_button"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow_light"
+            android:text="@string/title_activity_sing_up"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_large" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/spacing_small"
+            android:text="@string/terms_and_condition"
+            android:textAllCaps="false"
+            android:textColor="@color/gray_dark"
+            android:textSize="@dimen/font_small" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

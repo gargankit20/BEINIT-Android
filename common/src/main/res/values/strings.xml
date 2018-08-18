@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Common</string>
+    <string name="toolbar_null_pointer_exception">this Activity has no toolbar. See haveToolbar() and resToolbarId()</string>
+
+    <string name="error_message_network">Network error</string>
+    <string name="error_message_call">Call failed</string>
+    <string name="error_message_map">Map loading failed</string>
+
+</resources>

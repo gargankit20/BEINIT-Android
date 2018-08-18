@@ -1,0 +1,187 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+ext {
+    minSdk = 19
+    compileSdk = 27
+    buildTool = '27.0.3'
+
+    junitVersion = '4.12'
+    JUNIT = "junit:junit:${junitVersion}"
+    runnerVersion = '1.0.1'
+    RUNNER = "com.android.support.test:runner:${runnerVersion}"
+    expresspVersion = '3.0.1'
+    ESPRESSP = "com.android.support.test.espresso:espresso-core:${expresspVersion}"
+    ANDROID_TEXT = [
+            junit   : JUNIT,
+            runner  : RUNNER,
+            espressp: ESPRESSP
+    ]
+
+    truthVersion = '0.40'
+    TRUTH = "com.google.truth:truth:${truthVersion}"
+
+    supportLibrary = '27.1.0'
+    APPCOMPAT = "com.android.support:appcompat-v7:${supportLibrary}"
+    SUPPORT = "com.android.support:support-v4:${supportLibrary}"
+    DESIGN = "com.android.support:design:${supportLibrary}"
+    CARD_VIEW = "com.android.support:cardview-v7:${supportLibrary}"
+    CONSTRAINT_LAYOUT = 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    TIMBER = 'com.jakewharton.timber:timber:4.3.0'
+    CALLIGRAPHY = 'uk.co.chrisjenx:calligraphy:2.2.0'
+    PICASSO = 'com.squareup.picasso:picasso:2.71828'
+
+    leakCanaryVersion = '1.5.4'
+    LEAK_CANNARY_DEBUG = "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
+    LEAK_CANNARY_RELEASE = "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"
+    LEAK_CANNARY = [
+            debug  : LEAK_CANNARY_DEBUG,
+            release: LEAK_CANNARY_RELEASE
+    ]
+
+    RX_ANDROID = 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    RX_JAVA = 'io.reactivex.rxjava2:rxjava:2.1.12'
+
+    RETROFIT_VERSION = '2.4.0'
+    RETROFIT = "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
+    RETROFIT_MOSHI_CONVERTER = "com.squareup.retrofit2:converter-moshi:${RETROFIT_VERSION}"
+    RETROFIT_RX_ADPTER = "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
+
+    daggerVersion = '2.15'
+    DEPENDENCY_INJECTION = [
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            annotationProcessor: "com.google.dagger:dagger-compiler:${daggerVersion}",
+    ]
+
+    BUTTERKNIFE = [
+            butter             : 'com.jakewharton:butterknife:8.8.1',
+            annotationProcessor: 'com.jakewharton:butterknife-compiler:8.8.1'
+    ]
+
+    /*add all dependencies to this array*/
+    PROJECT_DEPENDENCIES = [
+            APPCOMPAT,
+            SUPPORT,
+            DESIGN,
+            CARD_VIEW,
+            CONSTRAINT_LAYOUT,
+            TIMBER,
+            CALLIGRAPHY,
+            PICASSO,
+            RX_ANDROID,
+            RX_JAVA,
+            RETROFIT,
+            RETROFIT_MOSHI_CONVERTER,
+            RETROFIT_RX_ADPTER
+    ]
+}
+
+boolean isApp
+final String COMMON_LIB_NAME = 'common'
+final String LIB_PLUGIN = 'com.android.library'
+final String APP_PLUGIN = 'com.android.application'
+
+subprojects {
+    isApp = !projectDir.name.equals(COMMON_LIB_NAME)
+    if (isApp) {
+        apply plugin: APP_PLUGIN
+    } else {
+        apply plugin: LIB_PLUGIN
+    }
+
+    apply from: '../config/quality.gradle'
+
+    dependencies {
+        if (isApp) {
+            api project(":$COMMON_LIB_NAME")
+        } else {
+            testImplementation ANDROID_TEXT.junit
+            androidTestImplementation ANDROID_TEXT.runner
+            androidTestImplementation ANDROID_TEXT.espressp
+            compileOnly TRUTH
+
+            api PROJECT_DEPENDENCIES
+
+            debugApi LEAK_CANNARY.debug
+            releaseApi LEAK_CANNARY.release
+            api DEPENDENCY_INJECTION.dagger
+            api BUTTERKNIFE.butter
+        }
+        annotationProcessor DEPENDENCY_INJECTION.annotationProcessor
+        annotationProcessor BUTTERKNIFE.annotationProcessor
+    }
+
+    def keystorePropertiesFile = rootProject.file("keystore.properties")
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+    android {
+        compileSdkVersion compileSdk
+        buildToolsVersion buildTool
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+
+        signingConfigs {
+            release {
+                try {
+                    keyAlias keystoreProperties['keyAlias']
+                    keyPassword keystoreProperties['keyPassword']
+                    storeFile file(keystoreProperties['storeFile'])
+                    storePassword keystoreProperties['storePassword']
+                }
+                catch (ex) {
+                    throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties. " + ex.toString())
+                }
+            }
+        }
+        defaultConfig {
+            minSdkVersion minSdk
+            targetSdkVersion compileSdk
+            versionCode 1
+            versionName "1.0"
+            if (isApp) {
+                applicationId "com.beinit"
+            }
+
+            buildTypes {
+                debug {
+                    if (isApp) {
+                        applicationIdSuffix '.debug'
+                        versionNameSuffix '-DEBUG'
+                    }
+                    minifyEnabled false
+                    useProguard false
+                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                }
+
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                    signingConfig signingConfigs.release
+                }
+            }
+        }
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -36,6 +36,11 @@
             android:name="com.beinit.ui.signup.SignUpActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.beinit.ui.dashboard.DashboardActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

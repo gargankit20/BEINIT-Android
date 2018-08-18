@@ -1,14 +1,17 @@
 package com.beinit.ui.dashboard;
 
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
 import com.beinit.AppApplication;
 import com.beinit.base.AppBaseActivity;
 import com.beinit.bestpractices.R;
+import com.common.base.navigation.HasComponent;
+import com.common.base.navigation.HasFragmentContainer;
 
-public class DashboardActivity extends AppBaseActivity {
+public class DashboardActivity extends AppBaseActivity implements HasFragmentContainer, HasComponent<DashboardComponent> {
     private DashboardComponent dashboardComponent;
 
     @Override
@@ -54,5 +57,20 @@ public class DashboardActivity extends AppBaseActivity {
     @Override
     protected void onStop() {
         super.onStop();
+    }
+
+    @Override
+    public DashboardComponent getComponent() {
+        return dashboardComponent;
+    }
+
+    @Override
+    public int getFragmentContainerId() {
+        return R.id.fragment_container;
+    }
+
+    @Override
+    public FragmentManager getManager() {
+        return getSupportFragmentManager();
     }
 }

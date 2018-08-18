@@ -6,8 +6,9 @@ import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 
 import com.beinit.AppApplication;
-import com.beinit.bestpractices.R;
 import com.beinit.base.AppBaseActivity;
+import com.beinit.bestpractices.R;
+import com.beinit.ui.dashboard.DashboardScreen;
 import com.beinit.ui.signup.SignUpScreen;
 
 import butterknife.BindView;
@@ -81,6 +82,7 @@ public class LoginActivity extends AppBaseActivity {
 
     @OnClick(R.id.login_button)
     public void onLoginButtonClicked() {
+        activityScreenSwitcher().open(new DashboardScreen(true));
     }
 
     @OnClick(R.id.forgot_password_button)

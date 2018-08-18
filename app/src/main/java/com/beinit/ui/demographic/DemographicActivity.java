@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -34,7 +35,6 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
     @BindView(R.id.page_indicator_view)
     PageIndicatorView mPageIndicatorView;
 
-
     @Inject
     DemographicTitleAdapter mDemographicTitleAdapter;
     private static final int AUTO_CHANGE_DELAY_MILLIS = 4000;
@@ -60,7 +60,6 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        mSurfaceView.getHolder().addCallback(this);
     }
 
     @Override
@@ -111,6 +110,7 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
 
     @Override
     public void surfaceCreated(final SurfaceHolder mHolder) {
+        Log.d("GGGGGGGG", "surfaceCreated");
         try {
             mMediaPlayer = new MediaPlayer();
             mMediaPlayer.setDisplay(mHolder);
@@ -124,8 +124,9 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
                 @Override
                 public void onPrepared(MediaPlayer mediaPlayer) {
                     mediaPlayer.setLooping(true);
-                    mediaPlayer.start();
+                    Log.d("GGGGGGGG", "GGGGGG");
                     mediaPlayer.seekTo(mCurrentPosition);
+                    mediaPlayer.start();
                 }
             });
         } catch (Exception e) {
@@ -146,16 +147,18 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
     @Override
     protected void onResume() {
         super.onResume();
-        if (mMediaPlayer != null) {
-            mCurrentPosition = mMediaPlayer.getCurrentPosition();
-        }
         mHandler.postDelayed(mViewPagerChangeRunnable, AUTO_CHANGE_DELAY_MILLIS);
+        mSurfaceView.getHolder().addCallback(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        if (mMediaPlayer != null) {
+            mCurrentPosition = mMediaPlayer.getCurrentPosition();
+        }
         mHandler.removeCallbacks(mViewPagerChangeRunnable);
+        mSurfaceView.getHolder().removeCallback(this);
     }
 
     @Override

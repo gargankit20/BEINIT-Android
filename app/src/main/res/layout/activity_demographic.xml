@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/windowBackground"
-    tools:context=".ui.demographic.DemographicActivity">
+    tools:context="com.beinit.ui.demographic.DemographicActivity">
 
     <SurfaceView
         android:id="@+id/video_view"
@@ -25,7 +27,23 @@
         android:id="@+id/demographic_view_pager"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_above="@+id/buttom_container" />
+        android:layout_above="@+id/page_indicator_view" />
+
+    <com.rd.PageIndicatorView
+        android:id="@+id/page_indicator_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttom_container"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/spacing_huge"
+        android:layout_marginTop="@dimen/spacing_normal"
+        app:piv_animationType="none"
+        app:piv_dynamicCount="true"
+        app:piv_interactiveAnimation="true"
+        app:piv_selectedColor="@android:color/white"
+        app:piv_unselectedColor="@color/gray_dark"
+        attrs:piv_padding="8dp"
+        attrs:piv_radius="6dp" />
 
     <LinearLayout
         android:id="@+id/buttom_container"

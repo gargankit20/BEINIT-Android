@@ -1,9 +1,32 @@
-<android.support.v7.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/title_text_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:textColor="@android:color/white"
-    android:textSize="@dimen/font_large"
-    tools:context="com.beinit.bestpractices.ui.demographic.fragments.DemographicTitleFragment" />
+    android:gravity="center|bottom"
+    android:orientation="vertical"
+    tools:context="com.beinit.ui.demographic.fragments.DemographicTitleFragment">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/title_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_large"
+        android:textStyle="bold"
+        tools:context="com.beinit.ui.demographic.fragments.DemographicTitleFragment" />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/sub_title_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_normal"
+        tools:context="com.beinit.ui.demographic.fragments.DemographicTitleFragment" />
+
+</LinearLayout>

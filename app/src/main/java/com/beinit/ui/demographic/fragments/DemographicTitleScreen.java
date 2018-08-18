@@ -3,15 +3,17 @@ package com.beinit.ui.demographic.fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.beinit.ui.demographic.model.DemographicModel;
 import com.common.base.navigation.FragmentScreen;
 
 public class DemographicTitleScreen extends FragmentScreen {
 
-    private final String mTitle;
+    private final DemographicModel mModel;
     public static final String TITLE = "DemographicTitleScreen.title";
 
-    public DemographicTitleScreen(final String mTitle) {
-        this.mTitle = mTitle;
+    public DemographicTitleScreen(final DemographicModel mModel) {
+        super();
+        this.mModel = mModel;
     }
 
     @Override
@@ -22,7 +24,7 @@ public class DemographicTitleScreen extends FragmentScreen {
     @Override
     protected void onAddArguments(Bundle mArguments) {
         super.onAddArguments(mArguments);
-        mArguments.putString(TITLE, mTitle);
+        mArguments.putParcelable(TITLE, mModel);
     }
 
     @Override

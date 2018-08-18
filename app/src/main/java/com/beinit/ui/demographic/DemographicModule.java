@@ -3,10 +3,15 @@ package com.beinit.ui.demographic;
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
 
-import com.beinit.bestpractices.R;
 import com.beinit.ui.demographic.adapter.DemographicTitleAdapter;
+import com.beinit.ui.demographic.model.DemographicModel;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.util.Arrays;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import dagger.Module;
@@ -24,9 +29,30 @@ public class DemographicModule {
 
     @Provides
     @DemographicScope
-    DemographicTitleAdapter provideDemographicTitleAdapter() {
-        final String[] mArray = mContext.getResources().getStringArray(R.array.demographic_title);
-        final List<String> mData = Arrays.asList(mArray);
-        return new DemographicTitleAdapter(mFragmentManager, mData);
+    List<DemographicModel> provideDemographicModel() {
+        List<DemographicModel> mData = new ArrayList<>();
+        try {
+            final InputStream inputStream = mContext.getAssets().open("demographic_title.json");
+            final int size = inputStream.available();
+            final byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+            final String json = new String(buffer, "UTF-8");
+            final Gson mGson = new Gson();
+            final Type mType = new TypeToken<ArrayList<DemographicModel>>() {
+            }.getType();
+            mData = mGson.fromJson(json, mType);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return mData;
     }
+
+    @Provides
+    @DemographicScope
+    DemographicTitleAdapter provideDemographicTitleAdapter(final List<DemographicModel> mModels) {
+        return new DemographicTitleAdapter(mFragmentManager, mModels);
+    }
+
 }

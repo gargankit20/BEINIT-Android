@@ -16,6 +16,7 @@ import com.beinit.bestpractices.R;
 import com.beinit.ui.demographic.adapter.DemographicTitleAdapter;
 import com.beinit.ui.login.LoginScreen;
 import com.beinit.ui.signup.SignUpScreen;
+import com.rd.PageIndicatorView;
 
 import javax.inject.Inject;
 
@@ -29,6 +30,10 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
 
     @BindView(R.id.demographic_view_pager)
     ViewPager mDemographicViewPager;
+
+    @BindView(R.id.page_indicator_view)
+    PageIndicatorView mPageIndicatorView;
+
 
     @Inject
     DemographicTitleAdapter mDemographicTitleAdapter;
@@ -101,6 +106,7 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
     protected void onStart() {
         super.onStart();
         mDemographicViewPager.setAdapter(mDemographicTitleAdapter);
+        mPageIndicatorView.setViewPager(mDemographicViewPager);
     }
 
     @Override

@@ -12,6 +12,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 ext {
@@ -73,9 +74,14 @@ ext {
     ]
 
     GSON = 'com.google.code.gson:gson:2.8.5'
-    PAGE_INDICATOR_VIEW='com.romandanylyk:pageindicatorview:1.0.1'
+    PAGE_INDICATOR_VIEW = 'com.romandanylyk:pageindicatorview:1.0.1'
 
-    EXO_PLAYER= 'com.google.android.exoplayer:exoplayer:2.8.4'
+    EXO_PLAYER = 'com.google.android.exoplayer:exoplayer:2.8.4'
+
+    SEARCH_VIEW = 'com.github.arimorty:floatingsearchview:2.1.1'
+
+    BOTTOMIFY= 'com.github.volsahin:bottomify-navigation-view:v1.0.0'
+
 
     /*add all dependencies to this array*/
     PROJECT_DEPENDENCIES = [
@@ -94,7 +100,9 @@ ext {
             RETROFIT_RX_ADPTER,
             GSON,
             PAGE_INDICATOR_VIEW,
-            EXO_PLAYER
+            EXO_PLAYER,
+            SEARCH_VIEW,
+            BOTTOMIFY
     ]
 }
 
@@ -164,6 +172,7 @@ subprojects {
             targetSdkVersion compileSdk
             versionCode 1
             versionName "1.0"
+            vectorDrawables.useSupportLibrary = true
             if (isApp) {
                 applicationId "com.beinit"
             }

@@ -8,6 +8,7 @@
         android:title="Home"
         app:showAsAction="ifRoom" />
     <item
+        android:visible="false"
         android:id="@+id/action_discover"
         android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
@@ -15,6 +16,7 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:visible="false"
         android:id="@+id/action_live_stream"
         android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
@@ -22,6 +24,7 @@
         app:showAsAction="ifRoom" />
 
     <item
+
         android:id="@+id/action_search"
         android:enabled="true"
         android:icon="@drawable/ic_search_black_24dp"

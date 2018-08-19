@@ -77,3 +77,4 @@ fastlane/readme.md
 
 /keystore.properties
 /.idea/codeStyles/
+.idea/misc.xml

@@ -2,12 +2,9 @@ package com.beinit.ui.dashboard;
 
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 
 import com.beinit.AppApplication;
 import com.beinit.R;
@@ -20,6 +17,8 @@ import com.beinit.ui.dashboard.fragments.stream.StreamScreen;
 import com.common.base.navigation.FragmentScreenSwitcher;
 import com.common.base.navigation.HasComponent;
 import com.common.base.navigation.HasFragmentContainer;
+import com.volcaniccoder.bottomify.BottomifyNavigationView;
+import com.volcaniccoder.bottomify.OnNavigationItemChangeListener;
 
 import javax.inject.Inject;
 
@@ -27,11 +26,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public class DashboardActivity extends AppBaseActivity implements HasFragmentContainer,
-        HasComponent<DashboardComponent>, BottomNavigationView.OnNavigationItemSelectedListener {
+public class DashboardActivity extends AppBaseActivity implements
+        HasFragmentContainer, HasComponent<DashboardComponent>, OnNavigationItemChangeListener {
 
-    @BindView(R.id.bottom_navigation)
-    BottomNavigationView mBottomNavigation;
+    @BindView(R.id.bottomify_navigation_view)
+    BottomifyNavigationView mBottomifyNavigationView;
 
     @Inject
     FragmentScreenSwitcher mFragmentScreenSwitcher;
@@ -87,7 +86,7 @@ public class DashboardActivity extends AppBaseActivity implements HasFragmentCon
         if (!mFragmentScreenSwitcher.hasFragments()) {
             mFragmentScreenSwitcher.openWithClearStack(new HomeScreen());
         }
-        mBottomNavigation.setOnNavigationItemSelectedListener(this);
+        mBottomifyNavigationView.setOnNavigationItemChangedListener(this);
     }
 
     @Override
@@ -112,24 +111,23 @@ public class DashboardActivity extends AppBaseActivity implements HasFragmentCon
     }
 
     @Override
-    public boolean onNavigationItemSelected(final @NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_home:
+    public void onNavigationItemChanged(BottomifyNavigationView.NavigationItem navigationItem) {
+        switch (navigationItem.getPosition()) {
+            case 0:
                 mFragmentScreenSwitcher.openWithClearStackCheck(new HomeScreen());
-                return true;
-            case R.id.action_discover:
+                break;
+            case 1:
                 mFragmentScreenSwitcher.openWithClearStackCheck(new DiscoverScreen());
-                return true;
-            case R.id.action_live_stream:
+                break;
+            case 2:
                 mFragmentScreenSwitcher.openWithClearStackCheck(new StreamScreen());
-                return true;
-            case R.id.action_search:
+                break;
+            case 3:
                 mFragmentScreenSwitcher.openWithClearStackCheck(new SearchScreen());
-                return true;
-            case R.id.action_account:
+                break;
+            case 4:
                 mFragmentScreenSwitcher.openWithClearStackCheck(new AccountScreen());
-                return true;
+                break;
         }
-        return false;
     }
 }

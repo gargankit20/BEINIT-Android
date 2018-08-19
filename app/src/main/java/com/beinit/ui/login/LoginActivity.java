@@ -6,8 +6,8 @@ import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 
 import com.beinit.AppApplication;
+import com.beinit.R;
 import com.beinit.base.AppBaseActivity;
-import com.beinit.bestpractices.R;
 import com.beinit.ui.dashboard.DashboardScreen;
 import com.beinit.ui.signup.SignUpScreen;
 

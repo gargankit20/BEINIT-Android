@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.beinit.AppApplication;
+import com.beinit.R;
 import com.beinit.base.AppBaseActivity;
-import com.beinit.bestpractices.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

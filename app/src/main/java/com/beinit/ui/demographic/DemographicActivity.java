@@ -12,8 +12,8 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.beinit.AppApplication;
+import com.beinit.R;
 import com.beinit.base.AppBaseActivity;
-import com.beinit.bestpractices.R;
 import com.beinit.ui.demographic.adapter.DemographicTitleAdapter;
 import com.beinit.ui.login.LoginScreen;
 import com.beinit.ui.signup.SignUpScreen;
@@ -154,9 +154,16 @@ public class DemographicActivity extends AppBaseActivity implements SurfaceHolde
     @Override
     protected void onPause() {
         super.onPause();
-        if (mMediaPlayer != null) {
-            mCurrentPosition = mMediaPlayer.getCurrentPosition();
-        }
+        final Handler mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (mMediaPlayer != null) {
+                    mCurrentPosition = mMediaPlayer.getCurrentPosition();
+                    Log.d("FFFFFFFFFFFF", mCurrentPosition + "");
+                }
+            }
+        }, 1);
         mHandler.removeCallbacks(mViewPagerChangeRunnable);
         mSurfaceView.getHolder().removeCallback(this);
     }

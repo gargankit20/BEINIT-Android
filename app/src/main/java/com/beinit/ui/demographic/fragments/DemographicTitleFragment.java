@@ -4,8 +4,8 @@ package com.beinit.ui.demographic.fragments;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
 
+import com.beinit.R;
 import com.beinit.base.AppBaseFragment;
-import com.beinit.bestpractices.R;
 import com.beinit.ui.demographic.model.DemographicModel;
 
 import butterknife.BindView;

@@ -3,7 +3,6 @@ package com.beinit;
 import android.content.Context;
 
 import com.common.BaseApplication;
-import com.beinit.bestpractices.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 

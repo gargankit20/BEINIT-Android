@@ -5,8 +5,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
 import com.beinit.AppApplication;
+import com.beinit.R;
 import com.beinit.base.AppBaseActivity;
-import com.beinit.bestpractices.R;
 import com.beinit.ui.demographic.DemographicScreen;
 
 public class SplashActivity extends AppBaseActivity {

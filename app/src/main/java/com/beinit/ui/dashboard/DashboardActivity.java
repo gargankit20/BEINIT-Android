@@ -76,7 +76,7 @@ public class DashboardActivity extends AppBaseActivity implements HasFragmentCon
 
     @Override
     protected void initToolbarForChildActivity(ActionBar actionBar, Toolbar mToolbar) {
-
+        actionBar.hide();
     }
 
     @Override

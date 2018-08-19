@@ -8,10 +8,13 @@
     android:background="@color/windowBackground"
     tools:context="com.beinit.ui.demographic.DemographicActivity">
 
-    <SurfaceView
-        android:id="@+id/video_view"
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/player_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        app:controller_layout_id="@layout/custom_exo_simple_player_view"
+        app:resize_mode="fill" />
 
     <android.support.v7.widget.AppCompatTextView
         android:layout_width="wrap_content"

@@ -19,4 +19,6 @@
     <string name="terms_and_condition">By signing up, you agree to Be in it\nTerms and conditions of use and Privacy Policy</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="stream_url"><![CDATA[https://api.cedricm.com/media/featured/banner.mp4]]></string>
+    <string name="search_beinit">Search Beinit</string>
+    <string name="find_your_favourite">Find your favourite agencies,\nbrands, series, podcasts &amp;\nvideos, playlists and channels.</string>
 </resources>

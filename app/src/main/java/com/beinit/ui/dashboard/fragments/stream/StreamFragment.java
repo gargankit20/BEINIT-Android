@@ -9,7 +9,7 @@ public class StreamFragment extends AppBaseFragment {
 
     @Override
     protected int layoutId() {
-        return R.layout.fragment_search;
+        return R.layout.fragment_stream;
     }
 
     @Override

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="demographic_title">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
+
+    <string-array name="discover_title">
+        <item>Channels</item>
+        <item>Categories</item>
     </string-array>
 
 </resources>

@@ -1,13 +1,195 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical"
     tools:context="com.beinit.ui.dashboard.fragments.account.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fragment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:elevation="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="@string/my_account"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/setting_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:layout_toStartOf="@+id/account_image_view"
+                app:srcCompat="@drawable/ic_settings_applications_black_24dp" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/account_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/spacing_small"
+                app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_small">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/live_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_noun_live_broadcast_48dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_toEndOf="@+id/live_image_view"
+            android:text="@string/live_Streams"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/live_right_to_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+    </RelativeLayout>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="1dp"
+        android:background="@color/gray_dark" />
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_small">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/video_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_noun_youtube_48dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_toEndOf="@+id/video_image_view"
+            android:text="@string/videos"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/video_right_to_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_dark" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_small">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/channels_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_noun_live_broadcast_48dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_toEndOf="@+id/channels_image_view"
+            android:text="@string/channels"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/channels_right_to_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_dark" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:text="@string/recent_played"
+        android:textAllCaps="true"
+        android:textColor="@color/gray_dark"
+        android:textSize="@dimen/font_large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_dark" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/spacing_small"
+        android:text="@string/get_quick_access"
+        android:textColor="@color/gray_dark"
+        android:textSize="@dimen/font_small" />
+
+</LinearLayout>

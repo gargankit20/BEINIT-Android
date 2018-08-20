@@ -78,3 +78,4 @@ fastlane/readme.md
 /keystore.properties
 /.idea/codeStyles/
 .idea/misc.xml
+/.idea/caches/build_file_checksums.ser

@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    android:orientation="vertical"
-    tools:context="com.beinit.bestpractices.ui.dashboard.fragments.DashboardFragment">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/button"

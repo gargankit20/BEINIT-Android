@@ -5,36 +5,35 @@
         android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home"
+        android:title="@string/home"
         app:showAsAction="ifRoom" />
     <item
-        android:visible="false"
         android:id="@+id/action_discover"
         android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="discover"
+        android:title="@string/discover"
+        android:visible="false"
         app:showAsAction="ifRoom" />
 
     <item
-        android:visible="false"
         android:id="@+id/action_live_stream"
         android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Live Stream"
+        android:title="@string/live_Streams"
+        android:visible="false"
         app:showAsAction="ifRoom" />
 
     <item
-
         android:id="@+id/action_search"
         android:enabled="true"
         android:icon="@drawable/ic_search_black_24dp"
-        android:title="Search"
+        android:title="@string/search"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_account"
         android:enabled="true"
         android:icon="@drawable/ic_supervisor_account_black_24dp"
-        android:title="My Account"
+        android:title="@string/my_account"
         app:showAsAction="ifRoom" />
 </menu>

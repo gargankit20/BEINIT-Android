@@ -21,4 +21,16 @@
     <string name="stream_url"><![CDATA[https://api.cedricm.com/media/featured/banner.mp4]]></string>
     <string name="search_beinit">Search Beinit</string>
     <string name="find_your_favourite">Find your favourite agencies,\nbrands, series, podcasts &amp;\nvideos, playlists and channels.</string>
+
+    <string name="home">Home</string>
+    <string name="discover">Discover</string>
+    <string name="live_Streams">Live Streams</string>
+    <string name="search">Search</string>
+    <string name="my_account">My Account</string>
+
+    <string name="chanels"></string>
+    <string name="videos">Vedeos</string>
+    <string name="channels">Channels</string>
+    <string name="recent_played">Recently played</string>
+    <string name="get_quick_access">Get quick access to all you recenty played\ncontent here.</string>
 </resources>

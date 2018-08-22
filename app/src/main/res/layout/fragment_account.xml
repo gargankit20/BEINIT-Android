@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
+    android:background="@color/black_light"
     android:orientation="vertical"
     tools:context="com.beinit.ui.dashboard.fragments.account.AccountFragment">
 
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
-                android:text="@string/my_account"
+                android:text="@string/my_library"
                 android:textAllCaps="true"
                 android:textColor="@android:color/white" />
 
@@ -40,7 +40,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/spacing_small"
                 android:layout_toStartOf="@+id/account_image_view"
-                app:srcCompat="@drawable/ic_settings_applications_black_24dp" />
+                app:srcCompat="@drawable/ic_gear" />
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/account_image_view"

@@ -12,6 +12,7 @@
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/black_light"
         app:layout_constraintBottom_toTopOf="@+id/bottomify_navigation_view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,8 +24,8 @@
         android:id="@+id/bottomify_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bottomifyBackgroundColor"
-        app:active_color="@color/bottomifyActiveColor"
+        android:background="@color/black_dim"
+        app:active_color="@android:color/white"
         app:animation_duration="300"
         app:item_padding="4dp"
         app:item_text_size="10sp"
@@ -32,7 +33,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/dashboard_bottom_navigation"
-        app:passive_color="@color/bottomifyPassiveColor"
+        app:passive_color="@color/gray"
         app:pressed_color="@color/bottomifyPressedColor"
         app:scale_percent="5" />
 

@@ -11,7 +11,7 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
 
     private List<T> mDataSet;
 
-    BaseRecyclerAdapter() {
+    protected BaseRecyclerAdapter() {
         mDataSet = new ArrayList<>();
     }
 

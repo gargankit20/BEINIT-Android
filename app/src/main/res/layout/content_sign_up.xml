@@ -18,9 +18,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/black"
-            android:drawableLeft="@mipmap/ic_mail"
+            android:drawableLeft="@drawable/ic_msg"
             android:drawablePadding="@dimen/spacing_small"
-            android:drawableTint="@color/gray_dark"
+            android:drawableTint="@color/gray"
             android:hint="@string/email"
             android:padding="@dimen/spacing_small"
             android:textColor="@android:color/white"
@@ -30,8 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/black"
-            android:drawableLeft="@mipmap/ic_lock_24dp"
+            android:drawableLeft="@drawable/ic_lock"
             android:drawablePadding="@dimen/spacing_small"
+            android:drawableTint="@color/gray"
             android:hint="@string/choose_password"
             android:inputType="textPassword"
             android:padding="@dimen/spacing_small"
@@ -42,9 +43,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/black"
-            android:drawableLeft="@mipmap/ic_user_name"
+            android:drawableLeft="@drawable/ic_user"
             android:drawablePadding="@dimen/spacing_small"
-            android:drawableTint="@color/gray_dark"
+            android:drawableTint="@color/gray"
             android:hint="@string/choose_user_name"
             android:padding="@dimen/spacing_small"
             android:textColor="@android:color/white"
@@ -68,9 +69,8 @@
             android:padding="@dimen/spacing_small"
             android:text="@string/terms_and_condition"
             android:textAllCaps="false"
-            android:textColor="@color/gray_dark"
+            android:textColor="@color/gray"
             android:textSize="@dimen/font_small" />
-
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

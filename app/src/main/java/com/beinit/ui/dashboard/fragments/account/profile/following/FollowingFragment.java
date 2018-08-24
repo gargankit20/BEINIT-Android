@@ -1,15 +1,14 @@
-package com.beinit.ui.dashboard.fragments.account;
+package com.beinit.ui.dashboard.fragments.account.profile.following;
 
 
 import com.beinit.R;
 import com.beinit.base.AppBaseFragment;
 
-
-public class AccountFragment extends AppBaseFragment {
+public class FollowingFragment extends AppBaseFragment {
 
     @Override
     protected int layoutId() {
-        return R.layout.fragment_account;
+        return R.layout.fragment_following;
     }
 
     @Override
@@ -21,4 +20,5 @@ public class AccountFragment extends AppBaseFragment {
     public void onShow() {
 
     }
+
 }

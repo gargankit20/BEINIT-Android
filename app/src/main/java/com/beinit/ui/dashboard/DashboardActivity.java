@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import com.beinit.AppApplication;
 import com.beinit.R;
 import com.beinit.base.AppBaseActivity;
-import com.beinit.ui.dashboard.fragments.account.AccountScreen;
+import com.beinit.ui.dashboard.fragments.account.MyAccountScreen;
 import com.beinit.ui.dashboard.fragments.discover.DiscoverScreen;
 import com.beinit.ui.dashboard.fragments.home.HomeScreen;
 import com.beinit.ui.dashboard.fragments.search.SearchScreen;
@@ -126,7 +126,7 @@ public class DashboardActivity extends AppBaseActivity implements
                 mFragmentScreenSwitcher.openWithClearStackCheck(new SearchScreen());
                 break;
             case 4:
-                mFragmentScreenSwitcher.openWithClearStackCheck(new AccountScreen());
+                mFragmentScreenSwitcher.openWithClearStackCheck(new MyAccountScreen());
                 break;
         }
     }

@@ -1,0 +1,10 @@
+<android.support.v7.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="@dimen/spacing_large"
+    android:text="@string/noting_found"
+    android:textColor="@color/gray_dark"
+    android:textSize="@dimen/font_large"
+    tools:context="com.beinit.ui.dashboard.fragments.account.profile.videos.VideoFragment"></android.support.v7.widget.AppCompatTextView>

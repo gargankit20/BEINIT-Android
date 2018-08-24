@@ -3,7 +3,6 @@ package com.beinit.ui.dashboard.fragments.discover;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 
 import com.beinit.R;
 import com.beinit.base.AppBaseFragment;

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fragment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:elevation="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/back_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            app:srcCompat="@drawable/ic_black_48dp" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/social"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:paddingLeft="@dimen/spacing_small"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textColor="@color/gray_dark"
+        android:textSize="@dimen/font_large" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:background="@color/black_light">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/black_light"
+                    android:padding="@dimen/spacing_small"
+                    android:text="@string/private_session"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_larger" />
+
+                <com.suke.widget.SwitchButton
+                    android:layout_marginRight="@dimen/spacing_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:sb_background="@color/transparent"
+                    app:sb_button_color="#FFFFFF"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/yellow_light"
+                    app:sb_checkline_color="@color/transparent"
+                    app:sb_shadow_color="@color/transparent"
+                    app:sb_uncheckcircle_color="@color/transparent" />
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_large"
+                android:text="@string/private_session_lasts"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/font_small" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:background="@color/black_light">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/black_light"
+                    android:padding="@dimen/spacing_small"
+                    android:text="@string/publish_activity"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_larger" />
+
+                <com.suke.widget.SwitchButton
+                    android:layout_marginRight="@dimen/spacing_small"
+                    android:id="@+id/switch_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:sb_background="@color/transparent"
+                    app:sb_button_color="#FFFFFF"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/yellow_light"
+                    app:sb_checkline_color="@color/transparent"
+                    app:sb_shadow_color="@color/transparent"
+                    app:sb_uncheckcircle_color="@color/transparent" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_large"
+                android:text="@string/share_my_activity"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/font_small" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:background="@color/black_light"
+                android:gravity="center"
+                android:padding="@dimen/spacing_small"
+                android:text="@string/connect_to_wechat"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_larger" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

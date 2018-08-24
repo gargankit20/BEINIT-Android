@@ -80,8 +80,9 @@ ext {
 
     SEARCH_VIEW = 'com.github.arimorty:floatingsearchview:2.1.1'
 
-    BOTTOMIFY= 'com.github.volsahin:bottomify-navigation-view:v1.0.0'
+    BOTTOMIFY = 'com.github.volsahin:bottomify-navigation-view:v1.0.0'
 
+    SWITCH_BUTTON = 'com.github.zcweng:switch-button:0.0.3@aar'
 
     /*add all dependencies to this array*/
     PROJECT_DEPENDENCIES = [
@@ -102,7 +103,8 @@ ext {
             PAGE_INDICATOR_VIEW,
             EXO_PLAYER,
             SEARCH_VIEW,
-            BOTTOMIFY
+            BOTTOMIFY,
+            SWITCH_BUTTON
     ]
 }
 

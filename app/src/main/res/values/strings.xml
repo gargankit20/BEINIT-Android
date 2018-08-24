@@ -8,6 +8,9 @@
     <string name="login_with_wechat">Log in with WeChat</string>
     <string name="user_name">Username</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="new_password">New Password</string>
+    <string name="current_password">Current Password</string>
     <string name="log_in">LOG IN</string>
     <string name="forgot_your_password">Forgot your password?</string>
     <string name="or_sign_up">---or sign up---</string>
@@ -29,9 +32,55 @@
     <string name="my_account">My Account</string>
     <string name="my_library">My Library</string>
 
-    <string name="chanels"></string>
-    <string name="videos">Vedeos</string>
+    <string name="videos">Videos</string>
+
     <string name="channels">Channels</string>
     <string name="recent_played">Recently played</string>
     <string name="get_quick_access">Get quick access to all you recenty played\ncontent here.</string>
+    <string name="settings">Settings</string>
+    <string name="account">Account</string>
+    <string name="change_password">Change Password</string>
+    <string name="done">Done</string>
+    <string name="streaming_quality">Streaming Quality</string>
+    <string name="social">Social</string>
+    <string name="notification">Notification</string>
+    <string name="about">About</string>
+    <string name="devices">Devices</string>
+    <string name="logout">Logout</string>
+    <string name="subscription">Subscription</string>
+    <string name="free">Free</string>
+    <string name="video_quality">Video quality</string>
+    <string name="p_360">360p</string>
+    <string name="p_720">720p</string>
+    <string name="audio_only">Audio Only</string>
+    <string name="content_offline_viewing">Content (offline viewing)</string>
+    <string name="cache_videos">Cache Videos</string>
+    <string name="dont_save">Dont\'t Save</string>
+    <string name="version">Version</string>
+    <string name="content_copyright">Content Copyright</string>
+    <string name="show_terms_conditions">Show Terms &amp; Conditions</string>
+    <string name="show_privacy_policy">Show Privacy Policy</string>
+
+    <string name="private_session">Private Session</string>
+    <string name="private_session_lasts">Private Session lasts until you\'ve been inactive for 6 hours</string>
+    <string name="publish_activity">Publish Activity</string>
+    <string name="share_my_activity">Share my activity and what i listen to with my followeres on Beinit</string>
+    <string name="wechat">Wechat</string>
+    z
+    <string name="connect_to_wechat">Connect to Wechat...</string>
+    <string name="zero_videos">0\nvideos</string>
+    <string name="zero_followers">0\nfollowers</string>
+    <string name="zero_following">0\nfollowing</string>
+    <string name="noting_found">Noting found</string>
+
+    <string name="favourites">Favourites</string>
+    <string name="favourites_live_steams">Favourites Live Streams</string>
+    <string name="favourites_videos">Favourites videos</string>
+    <string name="steams">Streams</string>
+    <string name="my_live_streams">My Live Streams</string>
+    <string name="my_videos">My Videos</string>
+
+    <string name="blocked">Blocked</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
 </resources>

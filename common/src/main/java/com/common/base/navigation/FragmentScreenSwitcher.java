@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.common.R;
 import com.common.base.BaseFragment;
 import com.common.utils.Strings;
 
@@ -108,6 +109,7 @@ public class FragmentScreenSwitcher implements ScreenSwitcher<FragmentScreen>,
         mFragmentManager.beginTransaction()
                 .add(mFragmentContainerId, mScreen.getFragment(), mName)
                 .addToBackStack(mName)
+                .setCustomAnimations(R.anim.right_in, R.anim.left_out, R.anim.left_in, R.anim.right_out)
                 .commit();
     }
 
